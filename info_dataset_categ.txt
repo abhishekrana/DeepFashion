@@ -1,0 +1,172 @@
+[ 160 : <module>                       ] path dataset/train
+[ 166 : <module>                       ] Romper               : 5425
+[ 166 : <module>                       ] Jeggings             : 443
+[ 166 : <module>                       ] Kaftan               : 98
+[ 166 : <module>                       ] Gauchos              : 35
+[ 166 : <module>                       ] Anorak               : 121
+[ 166 : <module>                       ] Flannel              : 224
+[ 166 : <module>                       ] Coat                 : 1539
+[ 166 : <module>                       ] Jeans                : 5126
+[ 166 : <module>                       ] Hoodie               : 2910
+[ 166 : <module>                       ] Blazer               : 5408
+[ 166 : <module>                       ] Caftan               : 38
+[ 166 : <module>                       ] Tank                 : 11204
+[ 166 : <module>                       ] Blouse               : 17752
+[ 166 : <module>                       ] Robe                 : 107
+[ 166 : <module>                       ] Sweater              : 9517
+[ 166 : <module>                       ] Halter               : 11
+[ 166 : <module>                       ] Onesie               : 47
+[ 166 : <module>                       ] Cardigan             : 9606
+[ 166 : <module>                       ] Dress                : 52138
+[ 166 : <module>                       ] Cape                 : 0
+[ 166 : <module>                       ] Sweatpants           : 2224
+[ 166 : <module>                       ] Chinos               : 374
+[ 166 : <module>                       ] Leggings             : 3571
+[ 166 : <module>                       ] Sundress             : 0
+[ 166 : <module>                       ] Henley               : 521
+[ 166 : <module>                       ] Parka                : 491
+[ 166 : <module>                       ] Skirt                : 10794
+[ 166 : <module>                       ] Tee                  : 26653
+[ 166 : <module>                       ] Top                  : 7270
+[ 166 : <module>                       ] Jersey               : 534
+[ 166 : <module>                       ] Joggers              : 3260
+[ 166 : <module>                       ] Jacket               : 7548
+[ 166 : <module>                       ] Culottes             : 359
+[ 166 : <module>                       ] Poncho               : 579
+[ 166 : <module>                       ] Cutoffs              : 1177
+[ 166 : <module>                       ] Shirtdress           : 0
+[ 166 : <module>                       ] Trunks               : 287
+[ 166 : <module>                       ] Peacoat              : 63
+[ 166 : <module>                       ] Sarong               : 18
+[ 166 : <module>                       ] Jodhpurs             : 32
+[ 166 : <module>                       ] Turtleneck           : 99
+[ 166 : <module>                       ] Button-Down          : 243
+[ 166 : <module>                       ] Coverup              : 13
+[ 166 : <module>                       ] Kimono               : 1637
+[ 166 : <module>                       ] Capris               : 57
+[ 166 : <module>                       ] Sweatshorts          : 781
+[ 166 : <module>                       ] Shorts               : 14195
+[ 166 : <module>                       ] Jumpsuit             : 4464
+[ 166 : <module>                       ] Bomber               : 229
+[ 166 : <module>                       ] Nightdress           : 0
+
+
+
+[ 160 : <module>                       ] path dataset/validation
+[ 166 : <module>                       ] Sweatshorts          : 165
+[ 166 : <module>                       ] Jersey               : 108
+[ 166 : <module>                       ] Jeggings             : 87
+[ 166 : <module>                       ] Flannel              : 49
+[ 166 : <module>                       ] Parka                : 98
+[ 166 : <module>                       ] Skirt                : 2046
+[ 166 : <module>                       ] Henley               : 89
+[ 166 : <module>                       ] Poncho               : 106
+[ 166 : <module>                       ] Jacket               : 1473
+[ 166 : <module>                       ] Gauchos              : 6
+[ 166 : <module>                       ] Button-Down          : 41
+[ 166 : <module>                       ] Trunks               : 58
+[ 166 : <module>                       ] Sarong               : 8
+[ 166 : <module>                       ] Nightdress           : 0
+[ 166 : <module>                       ] Shirtdress           : 0
+[ 166 : <module>                       ] Leggings             : 718
+[ 166 : <module>                       ] Bomber               : 41
+[ 166 : <module>                       ] Shorts               : 2700
+[ 166 : <module>                       ] Kimono               : 319
+[ 166 : <module>                       ] Capris               : 11
+[ 166 : <module>                       ] Turtleneck           : 18
+[ 166 : <module>                       ] Cardigan             : 1828
+[ 166 : <module>                       ] Sweater              : 1822
+[ 166 : <module>                       ] Kaftan               : 11
+[ 166 : <module>                       ] Anorak               : 16
+[ 166 : <module>                       ] Coat                 : 277
+[ 166 : <module>                       ] Joggers              : 581
+[ 166 : <module>                       ] Cutoffs              : 249
+[ 166 : <module>                       ] Romper               : 989
+[ 166 : <module>                       ] Sundress             : 0
+[ 166 : <module>                       ] Hoodie               : 541
+[ 166 : <module>                       ] Culottes             : 56
+[ 166 : <module>                       ] Caftan               : 7
+[ 166 : <module>                       ] Blazer               : 1040
+[ 166 : <module>                       ] Jeans                : 965
+[ 166 : <module>                       ] Halter               : 4
+[ 166 : <module>                       ] Jodhpurs             : 5
+[ 166 : <module>                       ] Blouse               : 3389
+[ 166 : <module>                       ] Top                  : 1397
+[ 166 : <module>                       ] Sweatpants           : 416
+[ 166 : <module>                       ] Cape                 : 0
+[ 166 : <module>                       ] Tee                  : 5143
+[ 166 : <module>                       ] Peacoat              : 17
+[ 166 : <module>                       ] Chinos               : 80
+[ 166 : <module>                       ] Tank                 : 2097
+[ 166 : <module>                       ] Robe                 : 22
+[ 166 : <module>                       ] Coverup              : 3
+[ 166 : <module>                       ] Jumpsuit             : 840
+[ 166 : <module>                       ] Dress                : 10052
+[ 166 : <module>                       ] Onesie               : 12
+
+
+
+[ 160 : <module>                       ] path dataset/test
+[ 166 : <module>                       ] Peacoat              : 17
+[ 166 : <module>                       ] Jersey               : 106
+[ 166 : <module>                       ] Coverup              : 1
+[ 166 : <module>                       ] Sundress             : 0
+[ 166 : <module>                       ] Henley               : 106
+[ 166 : <module>                       ] Top                  : 1411
+[ 166 : <module>                       ] Tee                  : 5091
+[ 166 : <module>                       ] Dress                : 9968
+[ 166 : <module>                       ] Culottes             : 71
+[ 166 : <module>                       ] Poncho               : 106
+[ 166 : <module>                       ] Jacket               : 1446
+[ 166 : <module>                       ] Jodhpurs             : 8
+[ 166 : <module>                       ] Shirtdress           : 0
+[ 166 : <module>                       ] Sarong               : 6
+[ 166 : <module>                       ] Button-Down          : 46
+[ 166 : <module>                       ] Turtleneck           : 29
+[ 166 : <module>                       ] Trunks               : 41
+[ 166 : <module>                       ] Jeans                : 985
+[ 166 : <module>                       ] Bomber               : 39
+[ 166 : <module>                       ] Sweatshorts          : 160
+[ 166 : <module>                       ] Joggers              : 575
+[ 166 : <module>                       ] Shorts               : 2771
+[ 166 : <module>                       ] Cutoffs              : 243
+[ 166 : <module>                       ] Nightdress           : 0
+[ 166 : <module>                       ] Jumpsuit             : 849
+[ 166 : <module>                       ] Capris               : 9
+[ 166 : <module>                       ] Kimono               : 338
+[ 166 : <module>                       ] Anorak               : 23
+[ 166 : <module>                       ] Jeggings             : 64
+[ 166 : <module>                       ] Kaftan               : 17
+[ 166 : <module>                       ] Coat                 : 304
+[ 166 : <module>                       ] Romper               : 994
+[ 166 : <module>                       ] Sweater              : 1784
+[ 166 : <module>                       ] Hoodie               : 597
+[ 166 : <module>                       ] Caftan               : 9
+[ 166 : <module>                       ] Blazer               : 1047
+[ 166 : <module>                       ] Cape                 : 0
+[ 166 : <module>                       ] Halter               : 2
+[ 166 : <module>                       ] Gauchos              : 8
+[ 166 : <module>                       ] Blouse               : 3416
+[ 166 : <module>                       ] Chinos               : 73
+[ 166 : <module>                       ] Parka                : 87
+[ 166 : <module>                       ] Leggings             : 724
+[ 166 : <module>                       ] Flannel              : 51
+[ 166 : <module>                       ] Cardigan             : 1877
+[ 166 : <module>                       ] Sweatpants           : 408
+[ 166 : <module>                       ] Robe                 : 21
+[ 166 : <module>                       ] Skirt                : 1933
+[ 166 : <module>                       ] Onesie               : 11
+[ 166 : <module>                       ] Tank                 : 2128
+
+
+
+
+
+
+
+
+
+
+mv Romper ../; mv Jeans/ ..; mv Blazer/ ..; mv Jumpsuit/ ..; mv Leggings/ ..; mv Joggers/ ..;
+mv ../Romper .; mv ../Jeans/ .; mv ../Blazer .; mv ../Jumpsuit/ .; mv ../Joggers/ .; mv ../Leggings .;
+
