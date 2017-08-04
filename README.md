@@ -56,9 +56,9 @@ logs	- logs required to run tensorboard
 dataset	- images in this folder will be used for training, validation and testing
 
 MODEL:
-									->	Classification Head (Categories)
+```sh									->	Classification Head (Categories)
 InputImage	->	VGG16 + Layers	--
 									->	Regression Head	(Confidnence in the Classification head prediction)
-
+```
 
 
