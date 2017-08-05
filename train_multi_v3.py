@@ -302,18 +302,23 @@ def create_model_predict(input_shape, optimizer='Adagrad', learn_rate=None, deca
     # TODO: Hardcoding
     input_shape_top_model_tensor = Input(shape=(7, 7, 512))
     #x_common = Dense(256, activation='relu')(input_shape_top_model)
-    x_common = Dense(256, activation='relu')(base_model.output)
+    # x_common = Dense(256, activation='relu')(base_model.output)
 
     ## Model Classification
-    x = Flatten()(x_common)
-    #x = Dropout(dropout_rate)(x)
+    # x = Flatten()(x_common)
+    x = Flatten()(base_model.output)
+    x = Dense(256, activation='tanh')(x)
+    x = Dropout(dropout_rate)(x)
     predictions_class = Dense(len(class_names), activation='softmax', name='predictions_class')(x)
 
 
     ## Model (Regression) IOU score
-    x = Flatten()(x_common)
-    # x = Dense(256, activation='relu')(x)
-    # x = Dropout(dropout_rate)(x)
+    # x = Flatten()(x_common)
+    x = Flatten()(base_model.output)
+    x = Dense(256, activation='tanh')(x)
+    x = Dropout(dropout_rate)(x)
+    x = Dense(256, activation='tanh')(x)
+    x = Dropout(dropout_rate)(x)
     predictions_iou = Dense(1, activation='sigmoid', name='predictions_iou')(x)
 
     # model_top.load_weights(top_model_weights_path)
@@ -588,7 +593,7 @@ def prediction_model():
     # image_path_name='dataset_btl/train/Robe/Lace-Paneled_Satin_Robe_img_00000002_gt_iou_1.0.jpg'
     # img = Image.open(image_path_name)
 
-    images_path_name = sorted(glob.glob('dataset_prediction/test/images/*.jpg'))
+    images_path_name = sorted(glob.glob('dataset_prediction/validation/images/*.jpg'))
     # logging.debug('images_path_name {}'.format(images_path_name))
 
 
@@ -645,7 +650,7 @@ np.random.seed(seed)
 class_names = get_subdir_list(dataset_train_path)
 logging.debug('class_names {}'.format(class_names))
 
-train_model()                                                                                       # Save weights at output/bottleneck_fc_model.h5
+#train_model()                                                                                       # Save weights at output/bottleneck_fc_model.h5
 prediction_model()                                                                                  # Load weights VGG16 and bottleneck_fc_model.h5 weigths and predict
 
 

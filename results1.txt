@@ -1,0 +1,71 @@
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_24-220-70-299_iou_0.0608960417573.jpg     0.043245 0.025199 0.931556 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_24-5-218-299_iou_0.608769526848.jpg     0.000001 0.999965 0.000034 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_3-0-162-299_iou_0.499063805271.jpg     0.000001 0.999152 0.000848 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_3-0-244-299_iou_0.482625907192.jpg     0.000004 0.999822 0.000173 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_50-15-213-299_iou_0.690490424457.jpg     0.000000 0.999995 0.000004 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_50-5-218-299_iou_0.648826127383.jpg     0.000000 0.999995 0.000005 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_51-5-154-108_iou_0.0992366412214.jpg     0.000001 0.998928 0.001071 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_51-5-218-252_iou_0.52538071066.jpg     0.000001 0.999994 0.000005 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_40-0-224-299_iou_0.533947065593.jpg     0.842853 0.000286 0.156861 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_40-114-137-299_iou_0.386515816209.jpg     0.627864 0.000145 0.371991 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_69-0-154-116_iou_0.186867484224.jpg     0.140947 0.004596 0.854457 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_73-64-152-190_iou_0.340802361465.jpg     0.951105 0.000273 0.048622 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_73-64-153-190_iou_0.345062390983.jpg     0.908029 0.000419 0.091552 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_gt_66-44-181-300_iou_1.0.jpg                0.999824 0.000003 0.000173 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-214-259_iou_0.682843804707.jpg     0.000010 0.000014 0.999976 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-214-261_iou_0.68858198794.jpg     0.000011 0.000055 0.999934 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-214-262_iou_0.691451079557.jpg     0.000011 0.000026 0.999963 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-257-274_iou_0.751391687188.jpg     0.000003 0.000003 0.999994 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-259-275_iou_0.748452631267.jpg     0.000001 0.000001 0.999998 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_0-0-195-282_iou_0.682950659502.jpg         0.005909 0.000071 0.994020 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_0-0-195-300_iou_0.694826767916.jpg         0.110569 0.000515 0.888916 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-24-180-300_iou_0.7777729916.jpg         0.069298 0.000501 0.930202 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-7-180-300_iou_0.737280522662.jpg        0.672292 0.002315 0.325393 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-71-155-300_iou_0.665798839181.jpg       0.321410 0.000179 0.678411 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-71-180-300_iou_0.776784033139.jpg       0.320669 0.000474 0.678856 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-91-155-300_iou_0.606085938806.jpg       0.109952 0.000744 0.889304 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_51-24-179-179_iou_0.374134364601.jpg       0.044020 0.000350 0.955630 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_crop_0-0-209-299_iou_0.27746031746.jpg     0.997976 0.000014 0.002010 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_crop_63-7-159-175_iou_0.600349617311.jpg     0.990876 0.000004 0.009120 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_crop_63-7-159-183_iou_0.63701218936.jpg     0.991747 0.000002 0.008251 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_crop_63-7-159-194_iou_0.687423225928.jpg     0.997317 0.000001 0.002682 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_gt_49-45-163-196_iou_1.0.jpg          0.999926 0.000000 0.000074 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000009_crop_0-0-204-299_iou_0.549463414634.jpg     0.130063 0.000035 0.869902 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000009_crop_56-90-167-299_iou_0.668374476013.jpg     0.337054 0.000013 0.662933 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000009_gt_51-39-182-294_iou_1.0.jpg          0.008041 0.000005 0.991954
+
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_24-220-70-299_iou_0.0608960417573.jpg     0.008169 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_24-5-218-299_iou_0.608769526848.jpg     0.817416 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_3-0-162-299_iou_0.499063805271.jpg     0.443766 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_3-0-244-299_iou_0.482625907192.jpg     0.735053 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_50-15-213-299_iou_0.690490424457.jpg     0.900209 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_50-5-218-299_iou_0.648826127383.jpg     0.829945 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_51-5-154-108_iou_0.0992366412214.jpg     0.033728 
+images_name_list index2 : dataset_prediction/validation/images/Double-Breasted_Peacoat_img_00000089_crop_51-5-218-252_iou_0.52538071066.jpg     0.516787 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_40-0-224-299_iou_0.533947065593.jpg     0.501831 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_40-114-137-299_iou_0.386515816209.jpg     0.118147 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_69-0-154-116_iou_0.186867484224.jpg     0.046998 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_73-64-152-190_iou_0.340802361465.jpg     0.086943 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_crop_73-64-153-190_iou_0.345062390983.jpg     0.109010 
+images_name_list index2 : dataset_prediction/validation/images/Paisley_Print_Kaftan_img_00000045_gt_66-44-181-300_iou_1.0.jpg                0.980812 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-214-259_iou_0.682843804707.jpg     0.870200 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-214-261_iou_0.68858198794.jpg     0.913407 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-214-262_iou_0.691451079557.jpg     0.875758 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-257-274_iou_0.751391687188.jpg     0.954619 
+images_name_list index2 : dataset_prediction/validation/images/Plush_Polka_Dot_Robe_img_00000013_crop_38-22-259-275_iou_0.748452631267.jpg     0.955523 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_0-0-195-282_iou_0.682950659502.jpg         0.810536 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_0-0-195-300_iou_0.694826767916.jpg         0.863550 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-24-180-300_iou_0.7777729916.jpg         0.954582 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-7-180-300_iou_0.737280522662.jpg        0.914711 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-71-155-300_iou_0.665798839181.jpg       0.983017 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-71-180-300_iou_0.776784033139.jpg       0.983117 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_31-91-155-300_iou_0.606085938806.jpg       0.974458 
+images_name_list index2 : dataset_prediction/validation/images/Tonal_Plaid_Robe_img_00000017_crop_51-24-179-179_iou_0.374134364601.jpg       0.218250 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_crop_0-0-209-299_iou_0.27746031746.jpg     0.101921 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_crop_63-7-159-175_iou_0.600349617311.jpg     0.579621 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_crop_63-7-159-183_iou_0.63701218936.jpg     0.448548 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_crop_63-7-159-194_iou_0.687423225928.jpg     0.817403 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000006_gt_49-45-163-196_iou_1.0.jpg          0.983558 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000009_crop_0-0-204-299_iou_0.549463414634.jpg     0.893435 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000009_crop_56-90-167-299_iou_0.668374476013.jpg     0.880600 
+images_name_list index2 : dataset_prediction/validation/images/Tribal_Print_V-Back_Kaftan_img_00000009_gt_51-39-182-294_iou_1.0.jpg          0.992607
