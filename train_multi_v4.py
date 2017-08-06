@@ -25,7 +25,8 @@ from random import randint
 
 import logging
 FORMAT = "[%(lineno)4s : %(funcName)-30s ] %(message)s"
-logging.basicConfig(level=logging.DEBUG, format=FORMAT)
+#logging.basicConfig(level=logging.DEBUG, format=FORMAT)
+logging.basicConfig(level=logging.INFO, format=FORMAT)
 
 
 
@@ -229,7 +230,7 @@ def save_bottleneck():
                     # bottleneck_features_train_class = model.predict(X, nb_train_class_samples // batch_size)
 
                     btl_save_file_name = 'bottleneck/'+train_val+'/btl_'+train_val+'_' + class_name + '.' + str(index).zfill(7) + '.npy'
-                    logging.debug('btl_save_file_name {}'.format(btl_save_file_name))
+                    logging.info('btl_save_file_name {}'.format(btl_save_file_name))
                     np.save(open(btl_save_file_name, 'w'), bottleneck_features_train_class)
 
                     for name in images_name_list:
@@ -295,14 +296,22 @@ def train_model():
 
 
     # Create train set
-    train_data = np.load(open(btl_train_names[0]))
-    for index, btl_name in enumerate(btl_train_names[1:]):
+    # train_data = np.load(open(btl_train_names[0]))
+    # for index, btl_name in enumerate(btl_train_names[1:]):
+    train_data = []
+    for index, btl_name in enumerate(btl_train_names):
         # logging.debug('btl_name {}'.format(btl_name))
         temp = np.load(open(btl_name))
-        train_data = np.concatenate((train_data, temp), axis=0)
+        # logging.info('Loading btl_name {} {}'.format(index, btl_name))
+        train_data.append(temp)
+        # train_data = np.concatenate((train_data, temp), axis=0)
 
     train_data = np.array(train_data)
-    logging.debug('train_data {}'.format(train_data.shape))
+    n1, n2, w, h, c = train_data.shape
+    logging.info('train_data {}'.format(train_data.shape))
+    train_data_ = train_data
+    train_data = np.reshape(train_data_, (n1*n2, w, h, c))
+    logging.info('train_data {}'.format(train_data.shape))
 
 
     # Validation
@@ -335,16 +344,21 @@ def train_model():
     logging.debug('val_labels_class {}'.format(val_labels_class.shape))
 
     # Create validation set
-    val_data = np.load(open(btl_val_names[0]))
-    for index, btl_name in enumerate(btl_val_names[1:]):
+    #val_data = np.load(open(btl_val_names[0]))
+    #for index, btl_name in enumerate(btl_val_names[1:]):
+    val_data = []
+    for index, btl_name in enumerate(btl_val_names):
         temp = np.load(open(btl_name))
-        val_data = np.concatenate((val_data, temp), axis=0)
+        # logging.info('Loading btl_name {} {}'.format(index, btl_name))
+        val_data.append(temp)
+        # val_data = np.concatenate((val_data, temp), axis=0)
 
     val_data = np.array(val_data)
-    logging.debug('val_data {}'.format(val_data.shape))
-
-
-
+    n1, n2, w, h, c = val_data.shape
+    logging.info('val_data {}'.format(val_data.shape))
+    val_data_ = val_data
+    val_data = np.reshape(val_data_, (n1*n2, w, h, c))
+    logging.info('val_data {}'.format(val_data.shape))
 
 
 
@@ -363,12 +377,12 @@ def train_model():
     tensorboard = TensorBoard(log_dir='./logs', histogram_freq=0, write_graph=True, write_images=True)
 
     callbacks_list = [csv_log, early_stopping, checkpoint, tensorboard]
-    logging.debug('callbacks_list {}'.format(callbacks_list))
+    logging.info('callbacks_list {}'.format(callbacks_list))
 
 
     # Generate weights based on images count for each class
     class_weight_val = class_weight.compute_class_weight('balanced', np.unique(train_labels_class), train_labels_class)
-    logging.info('class_weight_val {}'.format(class_weight_val))
+    logging.debug('class_weight_val {}'.format(class_weight_val))
 
 
     optimizer='Adagrad'
@@ -382,9 +396,14 @@ def train_model():
     logging.debug('input_shape {}'.format(input_shape))
     model = create_model_train(input_shape, optimizer, learn_rate, decay, momentum, activation, dropout_rate)
 
-    logging.debug('train_labels_iou {}'.format(train_labels_iou.shape))
-    logging.debug('train_labels_class {}'.format(train_labels_class.shape))
-    logging.debug('train_data {}'.format(train_data.shape))
+    logging.info('train_labels_iou {}'.format(train_labels_iou.shape))
+    logging.info('train_labels_class {}'.format(train_labels_class.shape))
+    logging.info('train_data {}'.format(train_data.shape))
+
+
+    logging.info('val_labels_iou {}'.format(val_labels_iou.shape))
+    logging.info('val_labels_class {}'.format(val_labels_class.shape))
+    logging.info('val_data {}'.format(val_data.shape))
 
     # TODO: class_weight_val wrong
     model.fit(train_data, [train_labels_class, train_labels_iou],
