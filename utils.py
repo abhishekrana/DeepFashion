@@ -1,125 +1,199 @@
 #!/usr/bin/python
 
 ### IMPORTS
-import config
-
-import os
-import shutil
-import numpy as np
-
-import logging
-#logging.basicConfig(level=logging.DEBUG, format=FORMAT)
-logging.basicConfig(level=logging.INFO, format=FORMAT)
+from config import *
 
 
-def get_dataset_class_image_count_sorted(split_name):
+### FUNCTIONS ###
 
-    class_name_sorted=[]
-    class_image_count_sorted=[]
+def get_optimizer(optimizer='Adagrad', lr=None, decay=0.0, momentum=0.0):
 
-    classes_images_train_dict={}
-    classes_images_val_dict={}
-    classes_images_test_dict={}
-    classes_images_train_dict, classes_images_val_dict, classes_images_test_dict = get_dataset_class_image_count()
-    logging.debug('classes_images_train_dict {}'.format(type(classes_images_train_dict)))
+    if optimizer == 'SGD':
+        if lr is None:
+            lr = 0.01
+        optimizer_mod = keras.optimizers.SGD(lr=lr, momentum=momentum, decay=decay, nesterov=False)
 
-    if split_name == 'train':
-        for key in sorted(classes_images_train_dict.iterkeys()):
-            class_name_sorted.append(key)
-            class_image_count_sorted.append(classes_images_train_dict[key])
+    elif optimizer == 'RMSprop':
+        if lr is None:
+            lr = 0.001
+        optimizer_mod = keras.optimizers.RMSprop(lr=lr, rho=0.9, epsilon=1e-08, decay=decay)
 
-    elif split_name == 'validation':
-        for key in sorted(classes_images_val_dict.iterkeys()):
-            class_name_sorted.append(key)
-            class_image_count_sorted.append(classes_images_val_dict[key])
+    elif optimizer == 'Adagrad':
+        if lr is None:
+            lr = 0.01
+        optimizer_mod = keras.optimizers.Adagrad(lr=lr, epsilon=1e-08, decay=decay)
 
-    elif split_name == 'test':
-        for key in sorted(classes_images_test_dict.iterkeys()):
-            class_name_sorted.append(key)
-            class_image_count_sorted.append(classes_images_test_dict[key])
+    elif optimizer == 'Adadelta':
+        if lr is None:
+            lr = 1.0
+        optimizer_mod = keras.optimizers.Adadelta(lr=1.0, rho=0.95, epsilon=1e-08, decay=0.0)
+
+    elif optimizer == 'Adam':
+        if lr is None:
+            lr = 0.001
+        optimizer_mod = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
+
+    elif optimizer == 'Adamax':
+        if lr is None:
+            lr = 0.002
+        optimizer_mod = keras.optimizers.Adamax(lr=0.002, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
+
+    elif optimizer == 'Nadam':
+        if lr is None:
+            lr = 0.002
+        optimizer_mod = keras.optimizers.Nadam(lr=0.002, beta_1=0.9, beta_2=0.999, epsilon=1e-08, schedule_decay=0.004)
 
     else:
-        logging.error('Unknown split_name {}'.format(split_name))
-        exit(0)
+        logging.error('Unknown optimizer {}'.format(optimizer))
+        exit(1)
 
-    return class_name_sorted, class_image_count_sorted
+    logging.debug('lr {}'.format(lr))
+    logging.debug('optimizer_mod {}'.format(optimizer_mod))
 
-
-
-# Display category and images count
-def get_dataset_class_image_count():
-    split_name=[]
-    classes_images_train_dict={}
-    classes_images_val_dict={}
-    classes_images_test_dict={}
-
-    for path in [dataset_train_path, dataset_val_path, dataset_test_path]:
-        split_name=path.split('/')[-1]
-        logging.debug('split_name {}'.format(split_name))
-
-        path1, dirs1, files1 = os.walk(path, topdown=True).next()
-        for dirs1_name in dirs1:
-            path2, dirs2, files2 = os.walk(os.path.join(path, dirs1_name), topdown=True).next()
-            file_count2 = len(files2)
-
-            class_name=path2.split('/')[-1]
-            if split_name == 'train':
-                classes_images_train_dict[class_name] = file_count2
-            elif split_name == 'validation':
-                classes_images_val_dict[class_name] = file_count2
-            elif split_name == 'test':
-                classes_images_test_dict[class_name] = file_count2
-            else:
-                logging.error('Unknown split_name {}'.format(split_name))
-                exit(0)
-
-            # logging.debug('file_count2 {}'.format(file_count2))
-            logging.info('{:20s} : {}'.format(dirs1_name, file_count2))
+    return optimizer_mod, lr
 
 
-    # logging.debug('\nclasses_images_train_dict {}'.format(classes_images_train_dict))
-    # logging.debug('\nclasses_images_val_dict {}'.format(classes_images_val_dict))
-    # logging.debug('\nclasses_images_test_dict {}'.format(classes_images_test_dict))
-
-    return classes_images_train_dict, classes_images_val_dict, classes_images_test_dict
-
-
-
-if __name__ == "__main__":
-    # class_image_count = [23, 1047, 3416, 39, 46, 9, 0, 9, 1877, 73, 304, 1, 71, 243, 51, 8, 2, 106, 597, 1446, 985, 64, 106, 8, 575, 849, 17, 338, 724, 0, 11, 87, 17, 106, 21, 994, 6, 0, 2771, 1933, 0, 1784, 408, 160, 2128, 1411, 41, 29]
-    #class_image_count = [2,5,1]
-
-    class_names, class_image_count = get_dataset_class_image_count_sorted('train')
-    logging.debug('class_names {}'.format(class_names))
-    logging.debug('class_image_count {}'.format(class_image_count))
-
-    total = sum(int(i) for i in class_image_count)
-    logging.debug('total {}'.format(total))
-
-    class_image_count_arr = 1 - np.array(class_image_count).astype(float)/total
-    logging.debug('class_image_count_arr {}'.format(class_image_count_arr))
-
-    np.set_printoptions(formatter={'float': '{: 0.6f}'.format})
-    print(class_image_count_arr)
+# Count no. of images(.jpg) in a directory (sorted)
+def get_images_count_recursive(path):
+    matches = []
+    score_iou = []
+    # logging.debug('path {}'.format(path))
+    for root, dirnames, filenames in sorted(os.walk(path)):
+        for filename in sorted(fnmatch.filter(filenames, '*.jpg')):
+            # logging.debug('filename {}'.format(filename))
+            matches.append(os.path.join(root, filename))
+            score_iou.append(filename.split('_')[-1].replace('.jpg',''))
+    # logging.debug('matches {}'.format(matches))
+    images_count = len(matches)
+    return score_iou, images_count
 
 
-    # get_dataset_class_image_count()
+# Sorted subdirectories list
+def get_subdir_list(path):
+    names=[]
+    for name in sorted(os.listdir(path)):
+        if os.path.isdir(os.path.join(path, name)):
+            names.append(name)
+    logging.info('names {}'.format(names))
+    return names
 
-    # class_names, image_count = get_dataset_class_image_count_sorted('train')
-    # logging.debug('image_count {}'.format(image_count))
-    # logging.debug('class_names {}'.format(class_names))
 
-    # class_names, image_count = get_dataset_class_image_count_sorted('validation')
-    # logging.debug('image_count {}'.format(image_count))
-    # logging.debug('class_names {}'.format(class_names))
+def preprocess_image(img):
 
-    # class_names, image_count = get_dataset_class_image_count_sorted('test')
-    # logging.debug('image_count {}'.format(image_count))
-    # logging.debug('class_names {}'.format(class_names))
+    img = img.resize((img_width, img_height))
+
+    img=np.array(img).astype(np.float32)
+
+    # VGG16
+    img[:,:,0] -= 103.939
+    img[:,:,1] -= 116.779
+    img[:,:,2] -= 123.68
+
+    # img /= 255
+    # img /= 255
+
+    # img = np.expand_dims(img, 0)
+
+    return img
+
+
+def display_bbox_text(img, bbox, text):
+    draw = ImageDraw.Draw(img)
+
+    # font = ImageFont.truetype(<font-file>, <font-size>)
+    # font = ImageFont.truetype("sans-serif.ttf", 16)
+    #font = ImageFont.truetype("DroidSans.ttf", 16)
+    font = ImageFont.truetype('fonts/alterebro-pixel-font.ttf', 20)
+    #font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
+
+    # draw.text((x, y),"Sample Text",(r,g,b))
+    draw.text((bbox[0], bbox[1]), text,(0,0,0),font=font)
+
+    # img.save('output/sample-out.jpg')
 
 
 
+def display_bbox(image_path_name, bboxes, prediction_class_name=None, prediction_class_prob=None, prediction_iou=None, images_name_list=None):
+    logging.debug('image_path_name {}'.format(image_path_name))
+    logging.debug('image_path_name {}'.format(type(image_path_name)))
+
+    image_path_name_ = image_path_name[0]
+    logging.debug('image_path_name_ {}'.format(image_path_name_))
+    logging.debug('image_path_name {}'.format(type(image_path_name_)))
+
+    # Load image
+    #img = skimage.io.imread(image_path_name_)
+    img = Image.open(image_path_name_)
+    logging.debug('img {}'.format(type(img)))
+
+    # Draw rectangles on the original image
+    fig, ax = plt.subplots(ncols=1, nrows=1, figsize=(6, 6))
+    ax.imshow(img)
 
 
+    # The origin is at top-left corner
+    for index, bbox in enumerate(bboxes):
+
+        iou_value = prediction_iou[index]
+        logging.debug('iou_value {} {}'.format(iou_value, images_name_list[index]))
+        if iou_value < prediction_iou_threshold:
+            logging.debug('Discard')
+            continue
+
+        # x1,x2,y1,y2 (compared with selective search output plot; don't do w = bbox[2]-bbox[0])
+        #x, y, w, h = bbox[0], bbox[1], bbox[2], bbox[3]
+        # Code modified; can do minus
+        x, y, w, h = bbox[0], bbox[1], bbox[2]-bbox[0], bbox[3]-bbox[1]
+
+        rect = mpatches.Rectangle((x, y), w, h, fill=False, edgecolor='red', linewidth=1)
+        ax.add_patch(rect)
+        logging.debug('bbox {}'.format(bbox))
+        logging.debug('   x    y    w    h')
+        logging.debug('{:4d} {:4d} {:4d} {:4d}'.format(x, y, w, h))
+
+        if prediction_class_name is not None:
+
+            pcn = prediction_class_name[index]
+            pcp = prediction_class_prob[index]
+            iou = prediction_iou[index]
+
+            text='%s %s %s'%(pcn, pcp, iou)
+            display_bbox_text(img, bbox, text)
+
+        ax.imshow(img)
+
+    plt.show()
+
+
+def crop_bbox(image_path_name, bboxes):
+
+    image_path_name_ = image_path_name[0]
+    # image_path_name_ = image_path_name
+    logging.debug('image_path_name_ {}'.format(image_path_name_))
+
+    # load image
+    # img = skimage.io.imread(image_path_name_)
+    img = Image.open(image_path_name_)
+    logging.debug('img {}'.format(type(img)))
+
+    img_crops = []
+    img_crops_name = []
+    image_name = image_path_name_.split('/')[-1].split('.jpg')[0]
+    logging.debug('image_name {}'.format(image_name))
+    for index, bbox in enumerate(bboxes):
+        x, y, w, h = bbox[0], bbox[1], bbox[2]+bbox[0], bbox[3]+bbox[1]
+        logging.debug('crop {} {} {} {}'.format(x, y, w, h))
+        img_crop = img.crop((x, y, w, h))
+        img_crop_name = image_name + '_crop-' + str(x) + '_' + str(y) + '_' + str(w) + '_' + str(h) + '.jpg'
+        img_crops_name.append(img_crop_name)
+        logging.debug('img_crop_name {}'.format(img_crop_name))
+        img_crop.save('dataset_prediction/crops/' + img_crop_name)
+        logging.debug('img_crop {}'.format(img_crop))
+        img_crops.append(img_crop)
+
+        logging.debug('img_crop {}'.format(type(img_crop)))
+
+    logging.debug('img_crops {}'.format(img_crops))
+    return img_crops, img_crops_name
 
 

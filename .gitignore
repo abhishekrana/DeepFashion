@@ -1,2 +1,3 @@
 bottleneck/train/*
 bottleneck/validation/*
+output/best-weights*

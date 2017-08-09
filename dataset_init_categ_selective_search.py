@@ -25,23 +25,10 @@ img/Sheer_Pleated-Front_Blouse/img_00000006.jpg                        3
 '''
 
 ### IMPORTS
-
 from __future__ import print_function
 
 from config import *
-
-import os
-import shutil
-import skimage.data
-
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 from selective_search import selective_search_bbox
-from PIL import Image
-
-import numpy as np
-import logging
-
 
 
 ### GLOBALS
@@ -86,7 +73,7 @@ def get_gt_bbox(image_path_name, file_ptr):
 # Get category names list
 def get_category_names():
     category_names = []
-    with open('fashion_data/Anno/list_category_cloth.txt') as file_list_category_cloth:
+    with open(fashion_dataset_path + '/Anno/list_category_cloth.txt') as file_list_category_cloth:
         next(file_list_category_cloth)
         next(file_list_category_cloth)
         for line in file_list_category_cloth:
@@ -247,9 +234,9 @@ def generate_dataset_images(category_names):
 
 
     count=0
-    with open('fashion_data/Anno/list_bbox.txt') as file_list_bbox_ptr:
-        with open('fashion_data/Anno/list_category_img.txt') as file_list_category_img:
-            with open('fashion_data/Eval/list_eval_partition.txt', 'r') as file_list_eval_ptr:
+    with open(fashion_dataset_path + '/Anno/list_bbox.txt') as file_list_bbox_ptr:
+        with open(fashion_dataset_path + '/Anno/list_category_img.txt') as file_list_category_img:
+            with open(fashion_dataset_path + '/Eval/list_eval_partition.txt', 'r') as file_list_eval_ptr:
 
                 next(file_list_category_img)
                 next(file_list_category_img)
@@ -294,13 +281,13 @@ def generate_dataset_images(category_names):
                                                                                                                                    # x1,y1: top left coordinate of crop; x2,y2: bottom right coordinate of crop
                         logging.debug('Ground bbox:  gt_x1:{} gt_y1:{} gt_x2:{} gt_y2:{}'.format(gt_x1, gt_y1, gt_x2, gt_y2))
 
-                        image_path_name_src = os.path.join(dataset_src_path, 'Img', image_path_name)
+                        image_path_name_src = os.path.join(fashion_dataset_path, 'Img', image_path_name)
                         logging.debug('image_path_name_src {}'.format(image_path_name_src))
 
                         calculate_bbox_score_and_save_img(image_path_name_src, dataset_image_path, gt_x1, gt_y1, gt_x2, gt_y2)
 
                         #TODO: Also cropping in test set. Check if required
-                        #shutil.copyfile(os.path.join(dataset_src_path, 'Img', image_path_name), dataset_image_path)
+                        #shutil.copyfile(os.path.join(fashion_dataset_path, 'Img', image_path_name), dataset_image_path)
 
                         idx_crop = idx_crop + 1
                         logging.debug('idx_crop {}'.format(idx_crop))
