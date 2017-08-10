@@ -142,7 +142,7 @@ def display_bbox(image_path_name, bboxes, prediction_class_name=None, prediction
             continue
 
         class_prob_value = prediction_class_prob[index]
-        logging.debug('class_value {} {}'.format(iou_value, images_name_list[index]))
+        logging.debug('class_value {} {}'.format(class_prob_value, images_name_list[index]))
         if class_prob_value < prediction_class_prob_threshold:
             logging.debug('Discard')
             continue

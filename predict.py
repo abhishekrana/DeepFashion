@@ -26,8 +26,9 @@ def init():
     logging.debug('input_shape {}'.format(input_shape))
 
     global class_names
-    # class_names = ['Anorak', 'Bomber', 'Button-Down', 'Capris', 'Chinos', 'Coat', 'Flannel', 'Hoodie', 'Jeans', 'Jeggings', 'Jersey', 'Kaftan', 'Parka', 'Peacoat', 'Poncho', 'Robe', 'Sweatshorts', 'Trunks', 'Turtleneck']
-    class_names = get_subdir_list(dataset_train_path)
+    # TODO: Remove hardcoding if dataset available
+    class_names = ['Anorak', 'Bomber', 'Button-Down', 'Capris', 'Chinos', 'Coat', 'Flannel', 'Hoodie', 'Jeans', 'Jeggings', 'Jersey', 'Kaftan', 'Parka', 'Peacoat', 'Poncho', 'Robe', 'Sweatshorts', 'Trunks', 'Turtleneck']
+    #class_names = get_subdir_list(dataset_train_path)
     logging.debug('class_names {}'.format(class_names))
 
 
