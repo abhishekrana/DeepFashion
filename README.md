@@ -54,8 +54,11 @@ python predict.py
 
 ### Misc
 dataset	- Contains images used for training, validation and testing.
+
 output	- Contains trained weights and bottleneck features.
+
 logs    - Contains logs and events used by tensorboard.
+
 
 ### MODEL
 ```sh
