@@ -65,7 +65,7 @@ def get_images_count_recursive(path):
             score_iou.append(filename.split('_')[-1].replace('.jpg',''))
     # logging.debug('matches {}'.format(matches))
     images_count = len(matches)
-    return score_iou, images_count
+    return matches, score_iou, images_count
 
 
 # Sorted subdirectories list
@@ -133,12 +133,20 @@ def display_bbox(image_path_name, bboxes, prediction_class_name=None, prediction
 
     # The origin is at top-left corner
     for index, bbox in enumerate(bboxes):
+        logging.debug(' ')
 
         iou_value = prediction_iou[index]
         logging.debug('iou_value {} {}'.format(iou_value, images_name_list[index]))
         if iou_value < prediction_iou_threshold:
             logging.debug('Discard')
             continue
+
+        class_prob_value = prediction_class_prob[index]
+        logging.debug('class_value {} {}'.format(iou_value, images_name_list[index]))
+        if class_prob_value < prediction_class_prob_threshold:
+            logging.debug('Discard')
+            continue
+
 
         # x1,x2,y1,y2 (compared with selective search output plot; don't do w = bbox[2]-bbox[0])
         #x, y, w, h = bbox[0], bbox[1], bbox[2], bbox[3]
@@ -148,8 +156,8 @@ def display_bbox(image_path_name, bboxes, prediction_class_name=None, prediction
         rect = mpatches.Rectangle((x, y), w, h, fill=False, edgecolor='red', linewidth=1)
         ax.add_patch(rect)
         logging.debug('bbox {}'.format(bbox))
-        logging.debug('   x    y    w    h')
-        logging.debug('{:4d} {:4d} {:4d} {:4d}'.format(x, y, w, h))
+        # logging.debug('   x    y    w    h')
+        # logging.debug('{:4d} {:4d} {:4d} {:4d}'.format(x, y, w, h))
 
         if prediction_class_name is not None:
 
@@ -174,7 +182,7 @@ def crop_bbox(image_path_name, bboxes):
     # load image
     # img = skimage.io.imread(image_path_name_)
     img = Image.open(image_path_name_)
-    logging.debug('img {}'.format(type(img)))
+    # logging.debug('img {}'.format(type(img)))
 
     img_crops = []
     img_crops_name = []
@@ -182,16 +190,16 @@ def crop_bbox(image_path_name, bboxes):
     logging.debug('image_name {}'.format(image_name))
     for index, bbox in enumerate(bboxes):
         x, y, w, h = bbox[0], bbox[1], bbox[2]+bbox[0], bbox[3]+bbox[1]
-        logging.debug('crop {} {} {} {}'.format(x, y, w, h))
+        # logging.debug('crop {} {} {} {}'.format(x, y, w, h))
         img_crop = img.crop((x, y, w, h))
         img_crop_name = image_name + '_crop-' + str(x) + '_' + str(y) + '_' + str(w) + '_' + str(h) + '.jpg'
         img_crops_name.append(img_crop_name)
         logging.debug('img_crop_name {}'.format(img_crop_name))
         img_crop.save('dataset_prediction/crops/' + img_crop_name)
-        logging.debug('img_crop {}'.format(img_crop))
+        # logging.debug('img_crop {}'.format(img_crop))
         img_crops.append(img_crop)
 
-        logging.debug('img_crop {}'.format(type(img_crop)))
+        # logging.debug('img_crop {}'.format(type(img_crop)))
 
     logging.debug('img_crops {}'.format(img_crops))
     return img_crops, img_crops_name

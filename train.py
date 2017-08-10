@@ -23,7 +23,7 @@ def init():
     logging.debug('batch_size {}'.format(batch_size))
 
     global class_names
-    class_names = get_subdir_list(dataset_train_path)
+    class_names = sorted(get_subdir_list(dataset_train_path))
     logging.debug('class_names {}'.format(class_names))
 
     global input_shape

@@ -26,6 +26,7 @@ def init():
     logging.debug('input_shape {}'.format(input_shape))
 
     global class_names
+    # class_names = ['Anorak', 'Bomber', 'Button-Down', 'Capris', 'Chinos', 'Coat', 'Flannel', 'Hoodie', 'Jeans', 'Jeggings', 'Jersey', 'Kaftan', 'Parka', 'Peacoat', 'Poncho', 'Robe', 'Sweatshorts', 'Trunks', 'Turtleneck']
     class_names = get_subdir_list(dataset_train_path)
     logging.debug('class_names {}'.format(class_names))
 
@@ -80,10 +81,10 @@ def predict_model(images, images_names=None):
         img = np.expand_dims(img, 0)
 
         prediction = model.predict(img, batch_size, verbose=1)
-        logging.debug('prediction {}'.format(prediction))
+        # logging.debug('prediction {}'.format(prediction))
 
         prediction_class_=prediction[0][0]
-        logging.debug('prediction_class_ {}'.format(prediction_class_))
+        # logging.debug('prediction_class_ {}'.format(prediction_class_))
         prediction_class.append(prediction_class_)
 
         prediction_iou_ = prediction[1][0][0]
@@ -105,7 +106,7 @@ def predict_model(images, images_names=None):
         images_list.append(img)
         images_name_list.append(image_path_name)
 
-    logging.debug('prediction_class {}'.format(prediction_class))
+    # logging.debug('prediction_class {}'.format(prediction_class))
     logging.debug('prediction_iou {}'.format(prediction_iou))
     logging.debug('prediction_class_prob {}'.format(prediction_class_prob))
     logging.debug('prediction_class_name {}'.format(prediction_class_name))
@@ -188,8 +189,8 @@ if __name__ == '__main__':
     #display_bbox(images_path_name, bboxes)
     image_crops, image_crops_name = crop_bbox(images_path_name, bboxes)
     logging.debug('image_crops {}'.format(len(image_crops)))
-    logging.debug('image_crops {}'.format(image_crops))
-    logging.debug('image_crops_name {}'.format(image_crops_name))
+    # logging.debug('image_crops {}'.format(image_crops))
+    # logging.debug('image_crops_name {}'.format(image_crops_name))
 
     #for index, image_crop in enumerate(image_crops):
     predict_model(image_crops, image_crops_name)

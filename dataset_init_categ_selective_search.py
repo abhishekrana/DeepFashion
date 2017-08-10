@@ -34,19 +34,45 @@ from selective_search import selective_search_bbox
 ### GLOBALS
 max_categories=50
 
+## Shorts               : 14195
+# Skirt                : 10794
+## Jacket               : 7548
+# Top                  : 7270
+# Jeans                : 5126
+# Joggers              : 3260
+# Hoodie               : 2910
+# Sweatpants           : 2224
+# Coat                 : 1539
+# Sweatshorts          : 781
+# Capris               : 57
+
 #category_name_generate = ['Anorak', 'Blazer', 'Blouse', 'Bomber', 'Button-Down', 'Cardigan', 'Flannel', 'Halter', 'Henley', 'Hoodie', 'Jacket', 'Jersey', 'Parka', 'Peacoat', 'Poncho', 'Sweater', 'Tank', 'Tee', 'Top', 'Turtleneck', 'Capris', 'Chinos', 'Culottes', 'Cutoffs', 'Gauchos', 'Jeans', 'Jeggings', 'Jodhpurs', 'Joggers', 'Leggings', 'Sarong', 'Shorts', 'Skirt', 'Sweatpants', 'Sweatshorts', 'Trunks', 'Caftan', 'Cape', 'Coat', 'Coverup', 'Dress', 'Jumpsuit', 'Kaftan', 'Kimono', 'Nightdress', 'Onesie', 'Robe', 'Romper', 'Shirtdress', 'Sundress']
 #category_name_generate=['Kaftan', 'Peacoat', 'Robe', 'Turtleneck']
-category_name_generate=['Kaftan', 'Peacoat', 'Robe']
+#category_name_generate=['Kaftan', 'Peacoat', 'Robe']
+#category_name_generate=['Skirt','Top','Jeans','Joggers','Hoodie','Sweatpants','Coat','Sweatshorts','Capris']
+
+#category_name_generate=['Jeggings', 'Kaftan', 'Anorak', 'Flannel', 'Robe', 'Chinos', 'Parka', 'Jersey', 'Poncho', 'Trunks', 'Peacoat', 'Turtleneck', 'Button-Down', 'Capris', 'Bomber', 'Coat', 'Sweatshorts', 'Jeans', 'Hoodie']
+#category_name_generate=['Chinos', 'Coat', 'Kaftan', 'Robe']
+category_name_generate=['Coat', 'Kaftan', 'Robe']
+
 
 ### FUNCTIONS
 
 # Create directory structure
 def create_dataset_split_structure():
-    if os.path.exists(dataset_path):
-        shutil.rmtree(dataset_path)
+    # if os.path.exists(dataset_path):
+    #     shutil.rmtree(dataset_path)
+
+    if not os.path.exists(dataset_path):
         os.makedirs(dataset_path)
+
+    if not os.path.exists(dataset_train_path):
         os.makedirs(dataset_train_path)
+
+    if not os.path.exists(dataset_val_path):
         os.makedirs(dataset_val_path)
+
+    if not os.path.exists(dataset_test_path):
         os.makedirs(dataset_test_path)
 
 

@@ -35,8 +35,8 @@ import logging
 import colored_traceback
 colored_traceback.add_hook(always=True)
 FORMAT = "[%(lineno)4s : %(funcName)-30s ] %(message)s"
-logging.basicConfig(level=logging.INFO, format=FORMAT)
-#logging.basicConfig(level=logging.DEBUG, format=FORMAT)
+#logging.basicConfig(level=logging.INFO, format=FORMAT)
+logging.basicConfig(level=logging.DEBUG, format=FORMAT)
 
 
 ### GLOBALS
@@ -49,9 +49,12 @@ dataset_val_path=os.path.join(dataset_path, 'validation')
 dataset_test_path=os.path.join(dataset_path, 'test')
 #dataset_src_path='fashion_data'
 fashion_dataset_path='../Deep_Learning/DeepFashionV2/fashion_data/'
+dataset_train_info=os.path.join(dataset_train_path, 'train_info.txt')
+dataset_val_info=os.path.join(dataset_val_path, 'val_info.txt')
 
 top_model_weights_path_save = 'output/bottleneck_fc_model.h5'
-top_model_weights_path_load = 'output/bottleneck_fc_model.h5'
+#top_model_weights_path_load = 'output/bottleneck_fc_model.h5'
+top_model_weights_path_load = 'output/best-weights-011-1.3547.hdf5'
 
 btl_path = 'bottleneck/'
 btl_train_path = 'bottleneck/train/'
@@ -72,6 +75,7 @@ batch_size_predict = 32
 
 predictions_class_weight=0.5
 predictions_iou_weight=0.5
+prediction_class_prob_threshold = 0.80
 prediction_iou_threshold = 0.70
 
 early_stopping_patience=500
