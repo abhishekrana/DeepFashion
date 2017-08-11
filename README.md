@@ -69,7 +69,7 @@ InputImage	->	VGG16 + Layers	--
 ```
 
 ### RESULTS
-![alt text](results/Screenshot from 2017-08-10 12-01-53.png "Prediction")
+![alt text](https://raw.githubusercontent.com/abhishekrana/DeepFashion/master/results/Screenshot%20from%202017-08-10%2012-01-53.png "Prediction")
 
 
 ### Acknowledgment
