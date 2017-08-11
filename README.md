@@ -68,6 +68,10 @@ InputImage	->	VGG16 + Layers	--
 
 ```
 
+### RESULTS
+![alt text](https://raw.githubusercontent.com/abhishekrana/DeepFashion/master/results/Screenshot%20from%202017-08-10%2012-01-53.png "Prediction")
+
+
 ### Acknowledgment
 - [DeepFashion Dataset](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
 
