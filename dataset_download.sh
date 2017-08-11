@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html
+
 mkdir -p fashion_data/Anno
 mkdir -p fashion_data/Eval
 mkdir -p fashion_data/Img
