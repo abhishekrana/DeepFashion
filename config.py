@@ -22,6 +22,7 @@ from keras import applications
 from sklearn.utils import class_weight
 from sklearn.model_selection import GridSearchCV
 
+import PIL
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
@@ -77,10 +78,15 @@ predictions_class_weight=0.5
 predictions_iou_weight=0.5
 prediction_class_prob_threshold = 0.80
 prediction_iou_threshold = 0.70
+# prediction_class_prob_threshold = 0.50
+# prediction_iou_threshold = 0.50
+
 
 early_stopping_patience=500
 
 
+input_image_width_threshold=500
+input_image_height_threshold=500
 
 
 # optimizer = ['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']

@@ -103,11 +103,15 @@ def display_bbox_text(img, bbox, text):
     # font = ImageFont.truetype(<font-file>, <font-size>)
     # font = ImageFont.truetype("sans-serif.ttf", 16)
     #font = ImageFont.truetype("DroidSans.ttf", 16)
-    font = ImageFont.truetype('fonts/alterebro-pixel-font.ttf', 20)
+    # font = ImageFont.truetype('fonts/alterebro-pixel-font.ttf', 30)
+    #font = ImageFont.truetype('/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-C.ttf', 16)
     #font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
+    font = ImageFont.truetype('font/Ubuntu-C.ttf', 16)
 
     # draw.text((x, y),"Sample Text",(r,g,b))
-    draw.text((bbox[0], bbox[1]), text,(0,0,0),font=font)
+    #draw.text((bbox[0], bbox[1]), text,(0,0,0),font=font)
+    draw.text((bbox[0], bbox[1]), text,(0,255,0),font=font)
+    #draw.text((bbox[0], bbox[1]), text,(255,0,0),font=font)
 
     # img.save('output/sample-out.jpg')
 

@@ -179,12 +179,40 @@ def predict_model(images, images_names=None):
         print('')
 
 
+def resize_image(images_path_name):
+    images_path_name = images_path_name[0]
+    basewidth = 300
+
+
+    img = Image.open(images_path_name)
+    logging.debug('img {}'.format(img.size))
+    w, h = img.size
+    logging.debug('{} {} '.format(w, h))
+
+    if w > input_image_width_threshold or h > input_image_height_threshold:
+        image_name = images_path_name.split('/')[-1].split('.jpg')[0]
+        logging.debug('image_name {}'.format(image_name))
+        image_path = os.path.dirname(images_path_name)
+        logging.debug('image_path {}'.format(image_path))
+
+        wpercent = (basewidth/float(img.size[0]))
+        hsize = int((float(img.size[1])*float(wpercent)))
+        img = img.resize((basewidth,hsize), PIL.Image.ANTIALIAS)
+        images_path_name_new = image_path + '/0_' + image_name + '.jpg'
+        img.save(images_path_name_new)
+
+
+
 ### MAIN ###
 
 if __name__ == '__main__':
 
     init()
     images_path_name = get_images()
+
+    # resize_image(images_path_name)
+    # images_path_name = get_images()
+
     bboxes = get_bbox(images_path_name)
     logging.debug('bboxes {}'.format(bboxes))
     #display_bbox(images_path_name, bboxes)
