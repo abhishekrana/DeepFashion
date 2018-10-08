@@ -64,7 +64,7 @@ logs    - Contains logs and events used by tensorboard.
 ```sh
 						->	Classification Head (Categories)
 InputImage	->	VGG16 + Layers	--
-						->	Regression Head	(Confidnence in the Classification head prediction)
+						->	Regression Head	(Confidence in the Classification head prediction)
 
 ```
 
